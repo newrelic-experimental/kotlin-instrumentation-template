@@ -27,13 +27,13 @@ buildscript {
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.3.0"
+    id("org.jetbrains.kotlin.jvm") version "2.2.21"
 }
 
 apply(plugin = "java")
 
 val javaAgentVersion: String = extra["javaAgentVersion"] as String
-val java_version = JavaVersion.VERSION_1_8
+val javaVersion = JavaVersion.VERSION_1_8
 
 tasks {
 
@@ -114,8 +114,8 @@ subprojects {
     apply(plugin = "com.newrelic.gradle-verify-instrumentation-plugin")
     apply(plugin = "org.jetbrains.kotlin.jvm")
 
-    val sourceCompatibility = java_version
-    val targetCompatibility = java_version
+    val sourceCompatibility = javaVersion
+    val targetCompatibility = javaVersion
 
     dependencies {
         testImplementation("org.nanohttpd:nanohttpd:2.3.1")
